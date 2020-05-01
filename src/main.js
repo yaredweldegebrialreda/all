@@ -8,17 +8,18 @@ import VueAxios from "vue-axios";
 
 import NProgress from 'nprogress';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap-vue/dist/bootstrap-vue.css";
+import { BTable,TableLitePlugin,TableSimplePlugin } from 'bootstrap-vue'
 import "../node_modules/nprogress/nprogress.css";
-var VueResource =require('vue-resource');
 import Create from "./components/Create.vue";
 import Edit from "./components/Edit.vue";
 import Index from "./components/Index.vue";
 
+Vue.component('b-table', BTable)
 Vue.use(VueRouter);
-Vue.use(axios);
-Vue.use(VueAxios);
-Vue.use(VueResource);
-Vue.http = axios;
+Vue.use(axios,VueAxios);
+Vue.use(TableSimplePlugin,TableLitePlugin)
+
 
 Vue.config.productionTip = false;
 

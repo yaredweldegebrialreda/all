@@ -38,7 +38,11 @@ export default {
       addItem() {
            let uri = 'http://localhost:4000/items/add';
            console.log(uri,this.item);
-            axios.post(uri, this.item).then(response => console.log(response.data));
+            axios.post(uri, this.item).then((response)=> {
+             console.log(response.data),
+             this.$router.push({name: 'Index'});
+            });
+           
         }
     }
 }
