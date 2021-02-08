@@ -56,6 +56,7 @@
         </v-btn>
 
         <v-btn text v-if="isLoggedIn" class="white--text" @click="handleSignout">
+         <v-icon  left>mdi-power</v-icon>
           <span>signout</span>
         </v-btn>
       </v-toolbar>
