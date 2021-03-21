@@ -11,6 +11,9 @@ class CountryPicker extends Component {
       countries: [],
     };
   }
+
+  
+
   componentDidMount = async (e) => {
     let returned = await this.props.countriesList();
     // console.log("world attacked countries returned:",this.props);
@@ -19,6 +22,7 @@ class CountryPicker extends Component {
     });
     console.log("inside state.", this.state.countries);
   };
+  
 
   render() {
     // console.log("propssssssssssss country:",this.props.data);

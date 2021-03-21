@@ -16,9 +16,12 @@ class Charts extends Component {
     componentDidMount=async e=>{
         let ret=await this.props.fetchDailyData();
        // console.log("returned daily report:",ret);
+       if (ret.payload){
         this.setState({
             daily_data:ret.payload
         })
+       }
+        
         console.log("daily_dataaaaaaaaa:",this.state.daily_data);
 
     }
@@ -54,7 +57,8 @@ class Charts extends Component {
             this.props.country?(
           <Bar
           data={{
-              labels:['Infected','Recovered','Deaths'],
+             // labels:['Infected','Recovered','Deaths'],
+             labels:daily_data.map(({date})=>date),
               datasets:[{
                   label:'People',
                   backgroundColor:[ 'rgba(0, 0, 255,0.5)', 'rgba(0, 255, 0,0.5)','rgba(255, 0, 0,0.5)'],

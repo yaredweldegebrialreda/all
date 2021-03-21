@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Cards, Charts, CountryPicker } from "./components";
+
 import { fetchData } from "./actions/action";
 import { connect } from "react-redux";
 import coronaImage from "./images/image.png"
